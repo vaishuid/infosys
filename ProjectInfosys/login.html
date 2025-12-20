@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>SmartStock – Auth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+
+      <h1 class="auth-title">SmartStock</h1>
+      <p class="auth-subtitle">AI-powered Inventory Forecasting</p>
+
+      <!-- LOGIN FORM -->
+<form id="login-form" action="connect.php" method="post">
+  <div class="form-row">
+    <label>Email</label>
+    <input type="email" placeholder="admin@smartstock.com" required />
+  </div>
+
+  <div class="form-row">
+    <label>Password</label>
+    <input type="password" placeholder="••••••••" required />
+  </div>
+
+  <!-- LOGIN LINK -->
+  <nav style="text-align:center; margin-top:12px;">
+    <b>
+      <a href="index.html" class="btn btn-secondary" style="display:block; text-decoration:none;">
+        Login
+      </a>
+    </b>
+  </nav>
+
+  <p class="switch-text">
+    Don’t have an account?
+    <span onclick="showSignup()">Sign up</span>
+  </p>
+</form>
+
+
+      <!-- SIGNUP FORM -->
+      <form id="signup-form" style="display:none;">
+        <div class="form-row">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" name="firstName"  required />
+        </div>
+
+        <div class="form-row">
+          <label>Last Name</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" required />
+        </div>
+
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" class="form-control" id="email" name="email required />
+        </div>
+
+        <div class="form-row">
+          <label>Password</label>
+          <input type="password" class="form-control" id="password" name="password" required />
+        </div>
+
+        <div class="form-row">
+          <label>Gender</label>
+          <div class="radio-group">
+            <label><input type="radio" name="gender" value="m" id="male" /> Male</label>
+            <label><input type="radio" name="gender"  value="f" id="female"/> Female</label>
+            <label><input type="radio" name="gender" value="o" id="other"/> Other</label>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary" style="width:100%;">
+          Sign Up
+        </button>
+        <nav>
+        <p class="switch-text">
+          Already have an account?
+          <span onclick="showLogin()">Login</span>
+        </p>
+        </nav>
+      </form>
+
+      <p class="auth-footer">
+        © SmartStock · FastAPI · ML
+      </p>
+
+    </div>
+  </div>
+
+  <script>
+    function showSignup() {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("signup-form").style.display = "block";
+    }
+
+    function showLogin() {
+      document.getElementById("signup-form").style.display = "none";
+      document.getElementById("login-form").style.display = "block";
+    }
+  </script>
+</body>
+</html>
